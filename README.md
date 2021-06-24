@@ -135,7 +135,7 @@ console.log(newCon.b);
 let c=newCon.b;
 c();
 ```
-## 3.apply call bind用法区别
+## 4.apply call bind用法区别
 
 `apply` 第二个参数可以是数组或类数组
 ```
