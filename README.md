@@ -101,3 +101,37 @@ f7.call(obj) //window
 ```
 
 阮一峰对箭头函数的讲解，[点击直达](https://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0)
+
+## 函数柯里化
+```
+let fn=function(n){
+    let i=n;
+    return function(m){
+        let sum=m+(++i);
+        console.log(m+"+"+i+"="+sum)
+    }
+}
+
+let f=fn(10)
+f(10)
+f(20)
+fn(10)(10)
+fn(20)(10)
+f(30)
+f(40)
+
+//实例的继承
+let con=function(){
+    this.a=1;
+    this.b=function(){
+        console.log("this is b")
+    }
+}
+
+let newCon=new con();
+console.log(newCon.a);
+console.log(newCon.b);
+
+let c=newCon.b;
+c();
+```
