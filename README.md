@@ -48,6 +48,7 @@ function changeValue(arg){
 changeValue(_obj)
 console.log(_obj)//{a:1,b:2}
 ```
+***
 
 ## 2.箭头函数
 
@@ -102,6 +103,8 @@ f7.call(obj) //window
 
 阮一峰对箭头函数的讲解，[点击直达](https://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0)
 
+***
+
 ## 3.函数柯里化
 ```
 let fn=function(n){
@@ -135,6 +138,9 @@ console.log(newCon.b);
 let c=newCon.b;
 c();
 ```
+
+***
+
 ## 4.apply call bind用法区别
 
 `apply` 第二个参数可以是数组或类数组
