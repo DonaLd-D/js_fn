@@ -1,4 +1,4 @@
-## js函数传参是`按值`传递还是`按引用`传递的？
+## 1.js函数传参是`按值`传递还是`按引用`传递的？
 
 1. js分**基本数据类型**和**引用数据类型**
 
@@ -49,7 +49,7 @@ changeValue(_obj)
 console.log(_obj)//{a:1,b:2}
 ```
 
-## 箭头函数
+## 2.箭头函数
 
 1. 箭头函数**可省略function单词**
 
@@ -102,7 +102,7 @@ f7.call(obj) //window
 
 阮一峰对箭头函数的讲解，[点击直达](https://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0)
 
-## 函数柯里化
+## 3.函数柯里化
 ```
 let fn=function(n){
     let i=n;
