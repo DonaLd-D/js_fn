@@ -135,3 +135,44 @@ console.log(newCon.b);
 let c=newCon.b;
 c();
 ```
+## 3.apply call bind用法区别
+
+`apply` 第二个参数可以是数组或类数组
+```
+function sum(num1,num2){
+return num1+num2
+}
+
+function callSum1(num1,num2){
+  return sum.apply(this,arguments)
+}
+
+function callSum2(num1,num2){
+  return sum.apply(this,[num1,num2])
+}
+
+console.log(callSum1(10,20))
+console.log(callSum2(20,30))
+```
+
+`call` 参数列表必须展开
+```
+function callSum3(num1,num2){
+  return sum.call(this,num1,num2)
+}
+
+console.log(callSum3(30,40))
+```
+
+`bind` 会返回一个函数实例
+```
+const _sum={num1:50,num2:60}
+
+function callSum4(){
+  return this.num1+this.num2
+}
+
+const _callSum4=callSum4.bind(_sum)
+
+console.log(_callSum4())
+```
