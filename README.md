@@ -141,7 +141,7 @@ c();
 
 ***
 
-## 4.apply call bind用法区别
+## 4.`apply` `call` `bind`区别
 
 `apply` 第二个参数可以是数组或类数组
 ```
@@ -182,3 +182,45 @@ const _callSum4=callSum4.bind(_sum)
 
 console.log(_callSum4())
 ```
+
+***
+
+## 5.`节流` `防抖`
+
+- `节流`
+- 不管事件触发有多频繁，只会在规定的时间内执行一次函数。
+```
+function throttle(fn,delay){
+    let valid = true
+    return function() {
+       if(!valid){
+           //休息时间 暂不接客
+           return false 
+       }
+       // 工作时间，执行函数并且在间隔期内把状态位设为无效
+        valid = false
+        setTimeout(() => {
+            fn()
+            valid = true;
+        }, delay)
+    }
+}
+```
+- `防抖`
+- 不管事件触发有多频繁，只会执行最后一次触发事件的函数。
+
+```
+function debounce(fn,delay){
+    let timer = null //借助闭包
+    return function() {
+        if(timer){
+            clearTimeout(timer) 
+        }
+        timer = setTimeout(fn,delay) // 简化写法
+    }
+}
+```
+***
+
+
+    
